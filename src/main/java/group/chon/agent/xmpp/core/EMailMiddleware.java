@@ -1,4 +1,4 @@
-package group.chon.agent.mailer.core;
+package group.chon.agent.xmpp.core;
 
 import java.util.ArrayList;
 import java.util.Properties;

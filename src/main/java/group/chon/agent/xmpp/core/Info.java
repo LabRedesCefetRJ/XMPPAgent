@@ -1,4 +1,4 @@
-package group.chon.agent.mailer.core;
+package group.chon.agent.xmpp.core;
 
 public class Info {
     private static final String WIKI_URL = "https://github.com/chon-group/Mailer/wiki";

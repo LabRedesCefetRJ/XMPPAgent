@@ -1,4 +1,4 @@
-package group.chon.agent.mailer.core;
+package group.chon.agent.xmpp.core;
 
 import jason.asSyntax.ASSyntax;
 import jason.asSyntax.Plan;

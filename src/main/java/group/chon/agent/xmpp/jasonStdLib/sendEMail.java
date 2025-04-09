@@ -1,8 +1,8 @@
-package group.chon.agent.mailer.jasonStdLib;
+package group.chon.agent.xmpp.jasonStdLib;
 
-import group.chon.agent.mailer.Mailer;
-import group.chon.agent.mailer.core.Info;
-import group.chon.agent.mailer.core.Util;
+import group.chon.agent.xmpp.XMPPAgent;
+import group.chon.agent.xmpp.core.Info;
+import group.chon.agent.xmpp.core.Util;
 import jason.asSemantics.DefaultInternalAction;
 import jason.asSemantics.TransitionSystem;
 import jason.asSemantics.Unifier;
@@ -13,7 +13,7 @@ public class sendEMail extends DefaultInternalAction {
 
     @Override
     public Object execute(final TransitionSystem ts, Unifier un, Term[] args) throws Exception {
-        final Mailer mailerArch = Mailer.getMailerArch(ts.getAgArch());
+        final XMPPAgent mailerArch = XMPPAgent.getMailerArch(ts.getAgArch());
         if(mailerArch != null){
             if (args.length == 3) {
                 Util util = new Util();

@@ -1,21 +1,21 @@
-package group.chon.agent.mailer.jasonStdLib;
+package group.chon.agent.xmpp.jasonStdLib;
 
-import group.chon.agent.mailer.Mailer;
-import group.chon.agent.mailer.core.Info;
+import group.chon.agent.xmpp.XMPPAgent;
+import group.chon.agent.xmpp.core.Info;
 import jason.asSemantics.DefaultInternalAction;
 import jason.asSemantics.TransitionSystem;
 import jason.asSemantics.Unifier;
 import jason.asSyntax.Term;
 
-public class receivingHost extends DefaultInternalAction {
+public class sendingHost extends DefaultInternalAction {
 
     @Override
     public Object execute(final TransitionSystem ts, Unifier un, Term[] args) throws Exception {
-        final Mailer mailerArch = Mailer.getMailerArch(ts.getAgArch());
+        final XMPPAgent mailerArch = XMPPAgent.getMailerArch(ts.getAgArch());
         if(mailerArch != null){
             if (args.length == 3) {
                 mailerArch.getEmailBridge().setLogger(ts.getLogger());
-                mailerArch.getEmailBridge().setReceiverProps(
+                mailerArch.getEmailBridge().setSendProps(
                         args[0].toString().replaceAll("\"",""),
                         args[1].toString().replaceAll("\"",""),
                         args[2].toString().replaceAll("\"",""));

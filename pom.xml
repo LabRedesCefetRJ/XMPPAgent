@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.chon-group</groupId>
-    <artifactId>Mailer</artifactId>
-    <version>24.5.18</version>
+    <artifactId>XMPPAgent</artifactId>
+    <version>0.0.1</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
