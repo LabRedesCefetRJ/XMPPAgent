@@ -12,12 +12,12 @@ public class credentials extends DefaultInternalAction {
 
     @Override
     public Object execute(final TransitionSystem ts, Unifier un, Term[] args) throws Exception {
-        final XMPPAgent mailerArch = XMPPAgent.getMailerArch(ts.getAgArch());
-        if(mailerArch != null){
+        final XMPPAgent xmppArch = XMPPAgent.getXmppArch(ts.getAgArch());
+        if(xmppArch != null){
             if(args.length == 2){
-                mailerArch.getEmailBridge().setLogger(ts.getLogger());
-                mailerArch.getEmailBridge().setLogin(args[0].toString().replaceAll("\"",""));
-                mailerArch.getEmailBridge().setPassword(args[1].toString().replaceAll("\"",""));
+                xmppArch.getXMPPBridge().setLogger(ts.getLogger());
+                xmppArch.getXMPPBridge().setLogin(args[0].toString().replaceAll("\"",""));
+                xmppArch.getXMPPBridge().setPassword(args[1].toString().replaceAll("\"",""));
                 return true;
             }else {
                 ts.getLogger().warning(Info.wrongParametersERROR(this.getClass().getName()));
