@@ -16,8 +16,16 @@ public class credentials extends DefaultInternalAction {
         if(xmppArch != null){
             if(args.length == 2){
                 xmppArch.getXMPPBridge().setLogger(ts.getLogger());
-                xmppArch.getXMPPBridge().setLogin(args[0].toString().replaceAll("\"",""));
-                xmppArch.getXMPPBridge().setPassword(args[1].toString().replaceAll("\"",""));
+                String credentials = args[0].toString().replaceAll("\"","");
+                String[] parts = credentials.split("@");
+                if(parts.length == 2) {
+                    xmppArch.getXMPPBridge().setLogin(parts[0]);
+                    xmppArch.getXMPPBridge().setDomain(parts[1]);
+                    xmppArch.getXMPPBridge().setPassword(args[1].toString().replaceAll("\"",""));
+                } else {
+                    ts.getLogger().warning(Info.wrongParametersERROR(this.getClass().getName()));
+                    return false;
+                }
                 return true;
             }else {
                 ts.getLogger().warning(Info.wrongParametersERROR(this.getClass().getName()));

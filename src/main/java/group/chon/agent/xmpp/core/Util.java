@@ -17,7 +17,6 @@ public class Util {
     private String kqmlMessage;
     private String kqmlILF;
     private String sender;
-    private Term term;
 
     private boolean setKqmlMessage(String kqmlMessage) {
         if(getKqmlILF().equals("tellHow")){

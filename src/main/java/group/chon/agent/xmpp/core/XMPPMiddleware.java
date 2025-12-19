@@ -141,8 +141,7 @@ public class XMPPMiddleware {
         }
     }
 
-    public void setProps(String domain,String host, int port) {
-        this.xmppDomain = domain;
+    public void setProps(String host, int port) {
         this.xmppHost = host;
         this.xmppPort = port;
     }
@@ -165,6 +164,10 @@ public class XMPPMiddleware {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setDomain(String domain) {
+        this.xmppDomain = domain;
     }
 
     public String getLogin() {
